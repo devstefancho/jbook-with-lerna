@@ -10,10 +10,8 @@ export const serve = (
 ) => {
   const app = express();
 
-  const packagePath = require.resolve('local-client/build/index.html');
-  app.use(express.static(path.dirname(packagePath)));
-
   if (useProxy) {
+    // if NODE_ENV is not production, use another localhost(CRA server)
     app.use(
       createProxyMiddleware({
         target: 'http://localhost:3000',
@@ -21,6 +19,9 @@ export const serve = (
         logLevel: 'silent',
       })
     );
+  } else {
+    const packagePath = require.resolve('local-client/build/index.html');
+    app.use(express.static(path.dirname(packagePath)));
   }
 
   return new Promise<void>((resolve, reject) => {
