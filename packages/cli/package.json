@@ -1,6 +1,6 @@
 {
   "name": "jsnote",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "bin": "dist/index.js",
   "files": [
@@ -17,7 +17,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@jsnote/local-api": "^1.0.0",
+    "@jsnote/local-api": "^1.0.1",
     "commander": "^8.2.0",
     "typescript": "4.1.3"
   },
