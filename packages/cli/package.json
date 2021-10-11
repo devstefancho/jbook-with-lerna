@@ -1,20 +1,29 @@
 {
-  "name": "cli",
+  "name": "jsnote",
   "version": "1.0.0",
   "description": "",
+  "bin": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "publicConfig": {
+    "access": "public"
+  },
   "scripts": {
-    "start": "tsc --watch --preserveWatchOutput"
+    "start": "tsc --watch --preserveWatchOutput",
+    "prepublishOnly": "tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@jsnote/local-api": "^1.0.0",
     "commander": "^8.2.0",
-    "local-api": "^1.0.0",
     "typescript": "4.1.3"
   },
   "devDependencies": {
     "@types/node": "^16.10.2",
+    "esbuild": "0.8.26",
     "typescript": "^4.4.3"
   }
 }
